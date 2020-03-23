@@ -10,9 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//app()->bind('example',function(){    // wrapped up something into service container
+//    return new \App\Example;         // // 2 seperate instances of Example class
+//});
+//app()->singleton('example',function(){    // same instances of Example class,this code will run max one time after it will fetch the existing object whenever you request it
+//    return new \App\Example;
+//});
+
+//app()->singleton('\App\Services\Twitter',function (){
+//    return new \App\Services\Twitter('api-key');
+//});
+
+app()->singleton('twitter',function (){
+    return new \App\Services\Twitter('api-key');
+});
+
+//Route::get('/', function () {
+//    dd(app(\Illuminate\Filesystem\Filesystem::class));
+
+//    dd(app('example'),app('example'));
+
+//    dd(app('App\Example'));     // Even if we do not bind anything in Service Container.First laravel looks for this in service container and if not found then looks for a class named Example(It will Auto resolve this class and return an instance)
+//});
 
 
 Route::get('/','PagesController@home');
+
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 

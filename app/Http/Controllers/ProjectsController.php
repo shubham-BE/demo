@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Services\Twitter;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
@@ -89,9 +91,14 @@ class ProjectsController extends Controller
 //        return view('project.show',compact('project'));
 //    }
 
-    public function show(Project $project)           // Route Model Binding.
-    {
-        return view('project.show',compact('project'));
+//    public function show(Project $project)           // Route Model Binding.
+//    {
+//        return view('project.show',compact('project'));
+//    }
+
+    public function show(){
+       $twitter = app('twitter');
+       dd($twitter);
     }
 
 }
