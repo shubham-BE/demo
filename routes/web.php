@@ -21,9 +21,9 @@
 //    return new \App\Services\Twitter('api-key');
 //});
 
-app()->singleton('twitter',function (){
-    return new \App\Services\Twitter('api-key');
-});
+//app()->singleton('twitter',function (){
+//    return new \App\Services\Twitter('api-key');  //ProjectController@show
+//});
 
 //Route::get('/', function () {
 //    dd(app(\Illuminate\Filesystem\Filesystem::class));
